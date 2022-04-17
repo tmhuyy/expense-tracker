@@ -1,3 +1,4 @@
+import Card from "../Card/Card";
 import ExpenseForm from "./ExpenseForm";
 import "./newExpense.css";
 
@@ -8,9 +9,9 @@ const NewExpense = (props) => {
         onAppendData(expenseData);
     };
     return (
-        <section className="new-expense">
+        <Card className="new-expense">
             <ExpenseForm onExpenseData={onExpenseDataHandler} />
-        </section>
+        </Card>
     );
 };
 
