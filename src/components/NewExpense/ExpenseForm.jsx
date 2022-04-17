@@ -21,15 +21,17 @@ const ExpenseForm = (props) => {
                     <input
                         type="text"
                         value={expenseTitle}
+                        placeholder="e.g Fix Laptop"
                         onChange={(e) => setTitle(e.target.value)}
                     />
-                </div>
+                </div>  
                 <div className="new-expense__control">
                     <label>Amount</label>
                     <input
                         type="number"
                         min="0.01"
                         step="0.01"
+                        placeholder="e.g 12.34"
                         value={expenseAmount}
                         onChange={(e) => setAmount(e.target.value)}
                     />
