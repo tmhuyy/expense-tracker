@@ -12,7 +12,7 @@ const expenseItem = [
     },
     {
         id: "e2",
-        expenseDate: "2022-10-21",
+        expenseDate: "2020-10-21",
         expenseTitle: "Car Box",
         expenseAmount: 199.67,
     },

@@ -1,9 +1,8 @@
 import { useState } from "react";
 import Card from "../Card/Card";
 import ExpenseFilter from "../ExpenseFilter/ExpenseFilter";
-import ExpenseItem from "../ExpenseItem/ExpenseItem";
 import "./expenses.css";
-import moment from "moment";
+import ExpenseList from "../ExpenseList/ExpenseList";
 const Expenses = (props) => {
     const [year, setYear] = useState("2022");
     const { expenseItem } = props;
@@ -13,19 +12,7 @@ const Expenses = (props) => {
     return (
         <Card className="expenses">
             <ExpenseFilter onYear={onYearHandler} />
-            {expenseItem.map((e) => {
-                if (moment(e.expenseDate).format("YYYY") === year) {
-                    return (
-                        <ExpenseItem
-                            id={e.id}
-                            expenseDate={e.expenseDate}
-                            expenseTitle={e.expenseTitle}
-                            expenseAmount={e.expenseAmount}
-                        />
-                    );
-                }
-                
-            })}
+            <ExpenseList expenseItem={expenseItem} year={ year }/>
         </Card>
     );
 };
