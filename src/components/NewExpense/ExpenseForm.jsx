@@ -12,7 +12,11 @@ const ExpenseForm = (props) => {
         setTitle("");
         setAmount("");
         setDate("");
+        // document.querySelector(".new-expense__actions").style.display = "none";
     };
+    const cancelBtn = function () {
+        document.querySelector(".new-expense__controls").style.display = "none";
+    }
     return (
         <form onSubmit={submitHandler}>
             <section className="new-expense__controls">
@@ -48,7 +52,9 @@ const ExpenseForm = (props) => {
                 </div>
             </section>
             <div className="new-expense__actions">
+                {/* <button className="cancel" onClick={ cancelBtn }>Cancel</button> */}
                 <button type="submit">Add Expense</button>
+                {/* <button style="display: none">Add New Expense</button> */}
             </div>
         </form>
     );
