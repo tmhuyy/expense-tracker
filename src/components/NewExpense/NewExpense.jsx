@@ -12,7 +12,6 @@ const NewExpense = (props) => {
         const expenseData = { ...entered, id: Math.random().toString() };
         onAppendData(expenseData);
     };
-    console.log(add);
     const onAddNewExpenseHandler = (entered) => {
         setAdd(entered);
     }

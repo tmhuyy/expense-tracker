@@ -40,7 +40,7 @@ const ExpenseForm = (props) => {
                         step="0.01"
                         placeholder="e.g 12.34"
                         value={expenseAmount}
-                        onChange={(e) => setAmount(e.target.value)}
+                        onChange={(e) => setAmount(Number(e.target.value))}
                     />
                 </div>
                 <div className="new-expense__control">

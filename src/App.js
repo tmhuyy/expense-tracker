@@ -39,6 +39,7 @@ const App = () => {
     return (
         <div className="App">
             <NewExpense onAppendData={onAppendDataHandler} />
+            
             <Expenses expenseItem={data} />
         </div>
     );
