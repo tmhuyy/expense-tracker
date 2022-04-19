@@ -4,7 +4,7 @@ const ExpenseForm = (props) => {
     const [expenseTitle, setTitle] = useState("");
     const [expenseAmount, setAmount] = useState("");
     const [expenseDate, setDate] = useState("");
-    const { onExpenseData } = props;
+    const { onExpenseData, onResetAddNew } = props;
     const submitHandler = (e) => {
         e.preventDefault();
         const expenseData = { expenseTitle, expenseAmount, expenseDate };
@@ -12,7 +12,14 @@ const ExpenseForm = (props) => {
         setTitle("");
         setAmount("");
         setDate("");
+        onResetAddNew(false);
     };
+    const cancelHandler = () => {
+        setTitle("");
+        setAmount("");
+        setDate("");
+        onResetAddNew(false)
+    }
     return (
         <form onSubmit={submitHandler}>
             <section className="new-expense__controls">
@@ -33,7 +40,7 @@ const ExpenseForm = (props) => {
                         step="0.01"
                         placeholder="e.g 12.34"
                         value={expenseAmount}
-                        onChange={(e) => setAmount(e.target.value)}
+                        onChange={(e) => setAmount(Number(e.target.value))}
                     />
                 </div>
                 <div className="new-expense__control">
@@ -48,6 +55,7 @@ const ExpenseForm = (props) => {
                 </div>
             </section>
             <div className="new-expense__actions">
+                <button type="button" onClick={ cancelHandler}>Cancel</button>
                 <button type="submit">Add Expense</button>
             </div>
         </form>
